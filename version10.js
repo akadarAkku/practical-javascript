@@ -99,23 +99,43 @@ var todoList = {
       }
       }
       let view = {
-      displayTodos: function(){
-        let todosUl = document.querySelector('ul');
-        todosUl.innerHTML = '';
-      
-        for (let i=0 ; i < todoList.todos.length ; i++){
-          let todoLi = document.createElement('li');
-          let todo = todoList.todos[i];
-          let todoTextWithCompletion = '';
-      
-          if(todo.completed === true){
-            todoTextWithCompletion = '(X) ' + todo.todoText;
-          } else {
-            todoTextWithCompletion = '( ) ' + todo.todoText;
+        displayTodos: function(){
+          let todosUl = document.querySelector('ul');
+          todosUl.innerHTML = '';
+        
+          for (let i=0 ; i < todoList.todos.length ; i++){
+            let todoLi = document.createElement('li');
+            let todo = todoList.todos[i];
+            let todoTextWithCompletion = '';
+        
+            if(todo.completed === true){
+              todoTextWithCompletion = '(X) ' + todo.todoText;
+            } else {
+              todoTextWithCompletion = '( ) ' + todo.todoText;
+            }
+            
+            todoLi.id = i;
+            todoLi.textContent = todoTextWithCompletion;
+            todoLi.appendChild(this.createDeleteButton());
+            todosUl.appendChild(todoLi);
           }
-          
-          todoLi.textContent = todoTextWithCompletion;
-          todosUl.appendChild(todoLi);
+        },
+        createDeleteButton: function (){
+          var deleteButton = document.createElement('button');
+          deleteButton.textContent = 'Delete';
+          deleteButton.className = 'deleteButton';
+          return deleteButton;
+        },
+        setUpEventListeners: function(){
+          let todoUl = document.querySelector('ul');
+          todoUl.addEventListener('click', function(event){
+          // get the element that was clicked on
+          let elementClicked = event.target;
+          // check if the element is a click button
+          if (elementClicked.className === 'deleteButton'){
+            handler.deleteTodos(parseInt(elementClicked.parentNode.id));
+            }
+          });
         }
-      }
-      }
+        }
+        view.setUpEventListeners();
