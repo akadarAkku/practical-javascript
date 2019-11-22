@@ -6,37 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>practical-javascript</title>
     <link rel="stylesheet" href="style.css">
-    <script src="version10.js"></script>
+    <script src="version11.js"></script>
     <header id="header">
-        <h1>Akader-js3-week1_project</h1>
-    <script src="version8.js"></script>
+        <h1>Akader-js3-week1-project</h1>
+    </header>
 </head>
 <body>
+<div id="app-header">
     <h1>Todos List</h1>
-    <div>
-        <button onclick="handler.displayTodos()">Display Todos</button>
-        <button onclick="handler.toggleAll()">Toggle All</button>
-    </div>
-    <div>
-        <button onclick="handler.addTodo()">Add</button>
-        <input id="addTodoTextInput" type="text">
-    </div>
+</div>
+<div>
+    <button class="button" onclick="handler.toggleAll()">Toggle All</button>
+ </div>
+       
+    <button class="button" onclick="handler.toggleCompleted()">Toggle Completed</button>
+            
+    <input id="toggleCompletedPositionInput" type="number">
+        </div>
+        
+        <div>
+            <button class="button" onclick="handler.changeTodo()">Change</button>
+            <input id="changeTodoPositionInput" type="number">
+            <input id="changeTodoTextInput" type="text">
+        </div>
+    
+        
+        <div>
+            <button class="button" onclick="handler.addTodo()">Add</button>
+            <input id="addTodoTextInput" type="text">
+        </div>
+    
+        <ul>
+            
+        </ul>
+    
 
-    <div>
-        <button onclick="handler.changeTodo()">Change</button>
-        <input id="changeTodoPositionInput" type="number">
-        <input id="changeTodoTextInput" type="text">
-    </div>
-
-    <div>
-        <button onclick="handler.deleteTodos()">Delete</button>
-        <input id="deleteTodoPositionInput" type="number">
-    </div>
-
-    <div>
-        <button onclick="handler.toggleCompleted()">Toggle Completed</button>
-        <input id="toggleCompletedPositionInput" type="number">
-    </div>
-
+<footer id="footrt"> 
+    <p>Akader Ibrahim © 2019 | HYF Belgium | JS-3 | Week 1</p>
+</footer>
 </body>
 </html>

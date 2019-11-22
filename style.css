@@ -1,11 +1,70 @@
 body{
-    background: lightblue;
+    background: slategrey;
     width: 96%;
 }
 
-#header{
-    background: lightcoral;
-    padding: 0%;
-    margin: 0%;
-   
+#header {
+    background: teal;
+    color: white;
+    padding: 1%;
+    margin: auto;
+    position: relative;
+    top: 0px;
+    border: snow 2px solid;
+    text-align: center;
 }
+    
+.button {
+    border: none;
+    color: white;
+    width:150px;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    
+    }
+  .button:hover {
+    background-color: black;
+    color: white;
+  }
+
+  #addTodoTextInput { 
+    width: 50%; 
+    margin: auto;
+    padding: 15px;
+  }
+
+  #changeTodoTextInput {
+    width: 40%; 
+    margin: auto;
+    padding: 15px;
+    
+  }
+
+  #toggleCompletedPositionInput, #changeTodoPositionInput { 
+    width: 5%; 
+    margin-left: 2%;
+    padding: 15px;
+    
+  }
+
+ #footrt{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: teal;
+    color: white;
+    text-align: center;
+    border: snow 2px solid;
+}
+
+
+
+  
